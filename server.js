@@ -1,9 +1,11 @@
 // server/server.js
-const express = require('express')
-const mongoose = require('mongoose')
-const cors = require('cors')
-const helmet = require('helmet')
-require('dotenv').config()
+import express from 'express'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import helmet from 'helmet'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const app = express()
 
