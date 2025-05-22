@@ -4,15 +4,20 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import helmet from 'helmet'
 import dotenv from 'dotenv'
+import router from './routes/auth.js'
 
-dotenv.config()
+dotenv.config() // Cargar variables primero
 
 const app = express()
 
 // Middleware
+app.use(express.json()) // 🛠️ Middleware para parsear JSON
+
+// Seguridad y CORS
 app.use(cors())
 app.use(helmet())
-app.use(express.json())
+
+app.use('/api/auth', router) // 🛣️ Rutas
 
 // Rutas base (por ahora vacías)
 app.get('/', (req, res) => {
