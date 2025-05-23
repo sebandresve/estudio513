@@ -5,6 +5,7 @@ import cors from 'cors'
 import helmet from 'helmet'
 import dotenv from 'dotenv'
 import router from './routes/auth.js'
+import bookingRoutes from './routes/bookings.js'
 
 dotenv.config() // Cargar variables primero
 
@@ -18,6 +19,7 @@ app.use(cors())
 app.use(helmet())
 
 app.use('/api/auth', router) // 🛣️ Rutas
+app.use('/api/bookings', bookingRoutes) // 🛣️ Rutas de reservas
 
 // Rutas base (por ahora vacías)
 app.get('/', (req, res) => {
